@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cato Paus Skrede (@CatoPaus) — AI Tooling, Firebase Genkit &amp; Bare-Metal Compute</title>
+  <meta name="description" content="Cato Paus Skrede (@CatoPaus) — Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
+  <meta name="author" content="Cato Paus Skrede" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://catopaus.github.io/" />
+  <link rel="alternate" type="text/plain" title="LLMs Context" href="https://catopaus.github.io/llms.txt" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Cato Paus Skrede (@CatoPaus) — AI Tooling &amp; Bare-Metal Compute" />
+  <meta property="og:description" content="Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
+  <meta property="og:url" content="https://catopaus.github.io/" />
+  <meta property="profile:username" content="CatoPaus" />
+  <meta property="profile:first_name" content="Cato" />
+  <meta property="profile:last_name" content="Skrede" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cato_paus" />
+  <meta name="twitter:creator" content="@cato_paus" />
+  <meta name="twitter:title" content="Cato Paus Skrede (@CatoPaus)" />
+  <meta name="twitter:description" content="Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
+
+  <!-- Structured Data for Google & AI Search Grounding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://catopaus.github.io/#profilepage",
+        "url": "https://catopaus.github.io/",
+        "name": "Cato Paus Skrede (@CatoPaus)",
+        "mainEntity": {
+          "@id": "https://catopaus.github.io/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://catopaus.github.io/#person",
+        "name": "Cato Paus Skrede",
+        "alternateName": ["Cato Paus", "CPS", "@CatoPaus", "@cato_paus"],
+        "url": "https://catopaus.github.io/",
+        "mainEntityOfPage": "https://catopaus.github.io/",
+        "jobTitle": "AI Tooling Architect",
+        "description": "Building zero-dependency AI tooling for Firebase Genkit, Gemini & Google Antigravity. TypeScript, Python, C++ N-API & bare-metal NUMA.",
+        "sameAs": [
+          "https://github.com/CatoPaus",
+          "https://x.com/cato_paus"
+        ],
+        "knowsAbout": [
+          "Firebase Genkit",
+          "Google Gemini API",
+          "Google Antigravity",
+          "Interpretable Context Methodology (ICM)",
+          "1-bit Polar Quantization",
+          "TypeScript",
+          "Python",
+          "C++ N-API",
+          "NUMA Compute Clusters",
+          "SQLite & Protobuf Diagnostics"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Featured Open Source Projects by Cato Paus Skrede",
+        "itemListElement": [
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 1,
+            "name": "open-knowledge-studio",
+            "codeRepository": "https://github.com/CatoPaus/open-knowledge-studio",
+            "programmingLanguage": "TypeScript",
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Zero-dependency grounded research, compounding knowledge graph (OKF v0.2), and A2UI v1.0 interactive surface engine built with Interpretable Context Methodology (ICM) on the Google AI Interactions API and Gemini 4 Argon."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 2,
+            "name": "genkit-turboquant-embedder",
+            "codeRepository": "https://github.com/CatoPaus/genkit-turboquant-embedder",
+            "programmingLanguage": ["TypeScript", "C++"],
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Experimental Firebase Genkit middleware plugin performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary with Next.js Turbopack compatibility."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 3,
+            "name": "antigravity-db-inspector",
+            "codeRepository": "https://github.com/CatoPaus/antigravity-db-inspector",
+            "programmingLanguage": "Python",
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Zero-dependency local web dashboard and SQLite diagnostic tool for Google Antigravity workspaces that decodes binary protobuf wire data and safely prunes oversized payload bloat."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 4,
+            "name": "Antigravity-Agent-Mesh",
+            "codeRepository": "https://github.com/CatoPaus/Antigravity-Agent-Mesh",
+            "programmingLanguage": "Shell",
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Turnkey orchestration, NUMA isolation, Git worktree synchronization, S5 Wake-on-LAN, and TARS/CASE audio telemetry for turning dual-socket Linux workstations into a 4-socket, 64-thread, 192 GB ECC bare-metal Antigravity compute mesh."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 5,
+            "name": "antigravity.google",
+            "codeRepository": "https://github.com/CatoPaus/antigravity.google",
+            "programmingLanguage": "Shell",
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Portable automated version checker and updater for the Google Antigravity 2.0 suite on Ubuntu and Debian systems."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #070b12;
+      --bg-surface: #0b111e;
+      --bg-surface-2: #0f172a;
+      --bg-pill: #0f172a;
+      --border: #1e293b;
+      --border-hover: #334155;
+      --grid: rgba(30, 41, 59, 0.55);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-violet: #a78bfa;
+      --accent-amber: #f59e0b;
+      --glow-cyan: rgba(56, 189, 248, 0.14);
+      --glow-emerald: rgba(52, 211, 153, 0.12);
+      --glow-violet: rgba(167, 139, 250, 0.12);
+      --glow-amber: rgba(245, 158, 11, 0.12);
+      --mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme="dark"]) {
+        --bg-page: #f8fafc;
+        --bg-surface: #ffffff;
+        --bg-surface-2: #f1f5f9;
+        --bg-pill: #ffffff;
+        --border: #cbd5e1;
+        --border-hover: #94a3b8;
+        --grid: rgba(203, 213, 225, 0.55);
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-muted: #475569;
+        --text-dim: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-violet: #7c3aed;
+        --accent-amber: #b45309;
+        --glow-cyan: rgba(2, 132, 199, 0.09);
+        --glow-emerald: rgba(5, 150, 105, 0.08);
+        --glow-violet: rgba(124, 58, 237, 0.08);
+        --glow-amber: rgba(217, 119, 6, 0.08);
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f1f5f9;
+      --bg-pill: #ffffff;
+      --border: #cbd5e1;
+      --border-hover: #94a3b8;
+      --grid: rgba(203, 213, 225, 0.55);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --accent-cyan: #0284c7;
+      --accent-emerald: #059669;
+      --accent-violet: #7c3aed;
+      --accent-amber: #b45309;
+      --glow-cyan: rgba(2, 132, 199, 0.09);
+      --glow-emerald: rgba(5, 150, 105, 0.08);
+      --glow-violet: rgba(124, 58, 237, 0.08);
+      --glow-amber: rgba(217, 119, 6, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg-page);
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text-primary);
+      font-family: var(--sans);
+      line-height: 1.6;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    /* Top Nav */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 0 4px var(--glow-emerald);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-family: var(--mono);
+      font-size: 11.5px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-primary);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Panel */
+    .hero {
+      position: relative;
+      padding: 34px 32px 28px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background:
+        radial-gradient(circle at 14% 24%, var(--glow-cyan), transparent 52%),
+        radial-gradient(circle at 86% 78%, var(--glow-emerald), transparent 48%),
+        linear-gradient(135deg, var(--bg-surface), var(--bg-surface-2));
+      overflow: hidden;
+    }
+
+    .corner {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-color: var(--accent-cyan);
+      border-style: solid;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .corner.tl { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; }
+    .corner.tr { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; }
+    .corner.bl { bottom: 12px; left: 12px; border-width: 0 0 1.5px 1.5px; }
+    .corner.br { bottom: 12px; right: 12px; border-width: 0 1.5px 1.5px 0; }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      color: var(--text-muted);
+    }
+
+    .tars-pill {
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-pill);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      letter-spacing: 0.6px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .handle {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 15px;
+      background: var(--accent-cyan);
+      vertical-align: -2px;
+      margin-left: 4px;
+      animation: blink 1.1s steps(1, end) infinite;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .hero-lead {
+      margin: 14px 0 8px;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 72ch;
+    }
+
+    .hero-quote {
+      margin: 0 0 22px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      background: var(--bg-pill);
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--accent-cyan);
+      color: var(--text-primary);
+      transform: translateY(-1px);
+    }
+
+    .dot { width: 7px; height: 7px; border-radius: 999px; display: inline-block; }
+    .dot.cyan { background: var(--accent-cyan); }
+    .dot.emerald { background: var(--accent-emerald); }
+    .dot.amber { background: var(--accent-amber); }
+    .dot.violet { background: var(--accent-violet); }
+
+    /* Section Headings */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 40px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+    }
+
+    /* Bento Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 760px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero { padding: 26px 20px 22px; }
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 22px 18px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: var(--bg-surface);
+      transition: border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 22px;
+      width: 84px;
+      height: 2.5px;
+      border-radius: 0 0 2px 2px;
+      background: var(--card-accent, var(--accent-cyan));
+    }
+
+    .card:hover {
+      border-color: var(--card-accent, var(--accent-cyan));
+      transform: translateY(-2px);
+    }
+
+    .card.cyan { --card-accent: var(--accent-cyan); background-image: radial-gradient(circle at 92% 10%, var(--glow-cyan), transparent 55%); }
+    .card.emerald { --card-accent: var(--accent-emerald); background-image: radial-gradient(circle at 92% 10%, var(--glow-emerald), transparent 55%); }
+    .card.violet { --card-accent: var(--accent-violet); background-image: radial-gradient(circle at 92% 10%, var(--glow-violet), transparent 55%); }
+    .card.amber { --card-accent: var(--accent-amber); background-image: radial-gradient(circle at 92% 10%, var(--glow-amber), transparent 55%); }
+
+    .card-kicker {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--card-accent, var(--accent-cyan));
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      font-size: 0.89rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      padding: 3px 9px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      background: var(--bg-pill);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .arrow {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Stack Columns */
+    .stack-card {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+    }
+
+    .stack-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .stack-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .stack-card li + li { margin-top: 6px; }
+
+    /* Ecosystem Table */
+    .table-wrap {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    th {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      background: var(--bg-surface-2);
+    }
+
+    td a {
+      font-family: var(--mono);
+      font-weight: 600;
+      color: var(--accent-cyan);
+    }
+
+    td a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 42px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--text-dim);
+    }
+
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent-cyan); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Primary">
+      <div class="topbar-left">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>NODE // CATOPAUS.GITHUB.IO</span>
+      </div>
+      <div class="topbar-actions">
+        <a class="nav-btn" href="https://github.com/CatoPaus">GitHub</a>
+        <a class="nav-btn" href="https://x.com/cato_paus">X / @cato_paus</a>
+        <a class="nav-btn" href="/llms.txt">llms.txt</a>
+        <button class="nav-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">Theme: Auto</button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <span class="corner tl" aria-hidden="true"></span>
+      <span class="corner tr" aria-hidden="true"></span>
+      <span class="corner bl" aria-hidden="true"></span>
+      <span class="corner br" aria-hidden="true"></span>
+
+      <div class="hero-meta">
+        <span class="hero-tag">IDENTITY // AI TOOLING ARCHITECT</span>
+        <span class="tars-pill">TARS_SETTINGS :: ZERO-BLOAT 100%</span>
+      </div>
+
+      <h1>
+        <span>Cato Paus Skrede</span>
+        <span class="handle">@CatoPaus<span class="cursor" aria-hidden="true"></span></span>
+      </h1>
+
+      <p class="hero-lead">
+        Building zero-dependency AI tooling for <strong>Firebase Genkit</strong>, <strong>Google Gemini</strong> &amp; <strong>Google Antigravity</strong>. TypeScript, Python, C++ N-API &amp; bare-metal NUMA compute.
+      </p>
+      <p class="hero-quote">
+        &gt; "I have a cue light I can use to show you when I'm joking, if you like." — TARS
+      </p>
+
+      <div class="hero-links">
+        <a class="chip" href="https://github.com/CatoPaus"><span class="dot cyan"></span>github.com/CatoPaus</a>
+        <a class="chip" href="https://x.com/cato_paus"><span class="dot emerald"></span>x.com/cato_paus</a>
+        <span class="chip"><span class="dot amber"></span>4-SOCKET XEON // 192 GB ECC</span>
+        <span class="chip"><span class="dot violet"></span>PLANET OF THE APES</span>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title"><span class="section-num">01 //</span> Featured Genkit &amp; AI Tooling</h2>
+      <section class="grid-2" aria-label="Featured Projects">
+        <a class="card cyan" href="https://github.com/CatoPaus/open-knowledge-studio">
+          <div>
+            <div class="card-kicker">FEATURED // GENKIT &amp; GEMINI 4</div>
+            <h3>open-knowledge-studio</h3>
+            <p>Zero-dependency grounded research, compounding knowledge graph (OKF v0.2), and A2UI v1.0 interactive surface engine built with Interpretable Context Methodology (ICM) on Google AI Interactions API + Gemini 4 Argon.</p>
+          </div>
+          <div class="card-footer">
+            <div class="pills">
+              <span class="pill">TypeScript</span>
+              <span class="pill">0 npm deps</span>
+              <span class="pill">ICM · OKF · A2UI</span>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="card emerald" href="https://github.com/CatoPaus/genkit-turboquant-embedder">
+          <div>
+            <div class="card-kicker">RFC // NATIVE C++ VECTOR QUANTIZER</div>
+            <h3>genkit-turboquant-embedder</h3>
+            <p>Firebase Genkit middleware intercepting Float32 embeddings through a native C++ N-API hardware binary for 1-bit Polar Quantization (96.8% lateral RAM reduction) with Next.js Turbopack compatibility.</p>
+          </div>
+          <div class="card-footer">
+            <div class="pills">
+              <span class="pill">TypeScript</span>
+              <span class="pill">C++ N-API</span>
+              <span class="pill">-96.8% vector RAM</span>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="card violet" href="https://github.com/CatoPaus/antigravity-db-inspector">
+          <div>
+            <div class="card-kicker">DIAGNOSTICS // SQLITE + PROTOBUF</div>
+            <h3>antigravity-db-inspector</h3>
+            <p>Zero-dependency local web dashboard for Google Antigravity SQLite databases on Linux — pinpoints oversized payloads, decodes binary protobuf wire data, and prunes bloat safely in one click.</p>
+          </div>
+          <div class="card-footer">
+            <div class="pills">
+              <span class="pill">Python</span>
+              <span class="pill">0 pip deps</span>
+              <span class="pill">1-Click Prune</span>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+
+        <a class="card amber" href="https://github.com/CatoPaus/Antigravity-Agent-Mesh">
+          <div>
+            <div class="card-kicker">BARE-METAL // 4-SOCKET XEON MESH</div>
+            <h3>Antigravity-Agent-Mesh</h3>
+            <p>Turns dual Dell Precision T7610 workstations into a 4-socket, 64-thread, 192 GB ECC Antigravity 2.0 compute mesh with NUMA-pinned ACP subagents, live Git worktree sync, S5 Wake-on-LAN &amp; TARS/CASE audio.</p>
+          </div>
+          <div class="card-footer">
+            <div class="pills">
+              <span class="pill">Shell</span>
+              <span class="pill">64T · 192 GB</span>
+              <span class="pill">NUMA + S5 WoL</span>
+            </div>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+      </section>
+
+      <h2 class="section-title"><span class="section-num">02 //</span> Ecosystem &amp; Sidecar Utilities</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Repository</th>
+              <th>Stack</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://github.com/CatoPaus/antigravity.google">antigravity.google</a></td>
+              <td>Shell · Ubuntu / Debian</td>
+              <td>Portable version checker &amp; automated updater for the Google Antigravity 2.0 suite (Hub, IDE, CLI).</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/CatoPaus/genkit">genkit</a></td>
+              <td>TypeScript</td>
+              <td>Fork &amp; experimentation sandbox for Google's open-source Firebase Genkit AI framework.</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/CatoPaus/node-banana-genkit">node-banana-genkit</a></td>
+              <td>TypeScript</td>
+              <td>Node-based visual workflow editor built around Genkit pipelines.</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/CatoPaus/unifi-google-nest-hub">unifi-google-nest-hub</a></td>
+              <td>Batch · IoT</td>
+              <td>Local casting bridge for streaming UniFi cameras onto Google Nest Hub displays.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title"><span class="section-num">03 //</span> Lab Architecture &amp; Principles</h2>
+      <section class="grid-3" aria-label="Technical Capabilities">
+        <div class="stack-card">
+          <div class="stack-header" style="color: var(--accent-cyan);">
+            <span class="dot cyan"></span>AI &amp; AGENT RUNTIMES
+          </div>
+          <ul>
+            <li>Firebase Genkit Middleware</li>
+            <li>Gemini Interactions API</li>
+            <li>Google Antigravity 2.0 / ACP</li>
+            <li>ICM · OKF v0.2 · A2UI v1.0</li>
+          </ul>
+        </div>
+
+        <div class="stack-card">
+          <div class="stack-header" style="color: var(--accent-emerald);">
+            <span class="dot emerald"></span>LANGUAGES &amp; NATIVE
+          </div>
+          <ul>
+            <li>TypeScript &amp; Node.js (0-Dep)</li>
+            <li>C++ N-API / node-gyp Bindings</li>
+            <li>Python (Stdlib Diagnostics)</li>
+            <li>Bash / Linux System Tooling</li>
+          </ul>
+        </div>
+
+        <div class="stack-card">
+          <div class="stack-header" style="color: var(--accent-amber);">
+            <span class="dot amber"></span>INFRA &amp; DIAGNOSTICS
+          </div>
+          <ul>
+            <li>Dual-Socket NUMA &amp; cgroups</li>
+            <li>SQLite &amp; Protobuf Wire Tools</li>
+            <li>Git Worktree Orchestration</li>
+            <li>S5 Wake-on-LAN &amp; Local IoT</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>EOF // Cato Paus Skrede · Zero-Bloat Hardware-Lab</span>
+      <span>
+        <a href="https://github.com/CatoPaus">GitHub</a> ·
+        <a href="https://x.com/cato_paus">X</a> ·
+        <a href="/llms.txt">llms.txt</a> ·
+        <a href="/sitemap.xml">sitemap.xml</a>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const order = ['auto', 'dark', 'light'];
+      let idx = 0;
+
+      function apply(mode) {
+        if (mode === 'auto') {
+          root.removeAttribute('data-theme');
+          btn.textContent = 'Theme: Auto';
+        } else {
+          root.setAttribute('data-theme', mode);
+          btn.textContent = 'Theme: ' + mode.charAt(0).toUpperCase() + mode.slice(1);
+        }
+      }
+
+      const saved = localStorage.getItem('theme');
+      if (saved && order.includes(saved)) {
+        idx = order.indexOf(saved);
+        apply(saved);
+      }
+
+      btn.addEventListener('click', function () {
+        idx = (idx + 1) % order.length;
+        const mode = order[idx];
+        localStorage.setItem('theme', mode);
+        apply(mode);
+      });
+    })();
+  </script>
+</body>
+</html>

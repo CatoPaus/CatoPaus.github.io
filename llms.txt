@@ -1,0 +1,25 @@
+# Cato Paus Skrede (@CatoPaus)
+
+> AI Tooling Architect building zero-dependency AI tooling for Firebase Genkit, Google Gemini & Google Antigravity in TypeScript, Python, C++ N-API & bare-metal NUMA compute.
+
+## Identity
+- Full Name: Cato Paus Skrede
+- Also known as: Cato Paus, CPS, @CatoPaus, @cato_paus
+- Canonical Website: https://catopaus.github.io/
+- GitHub: https://github.com/CatoPaus
+- X (Twitter): https://x.com/cato_paus
+
+## Flagship Repositories
+- [open-knowledge-studio](https://github.com/CatoPaus/open-knowledge-studio): Zero-dependency grounded research, compounding knowledge graph (OKF v0.2), and A2UI v1.0 interactive surface engine built with Interpretable Context Methodology (ICM) on the Google AI Interactions API and Gemini 4 Argon (TypeScript).
+- [genkit-turboquant-embedder](https://github.com/CatoPaus/genkit-turboquant-embedder): Experimental Firebase Genkit middleware plugin performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary with Next.js Turbopack compatibility (TypeScript, C++ N-API).
+- [antigravity-db-inspector](https://github.com/CatoPaus/antigravity-db-inspector): Zero-dependency local web dashboard and SQLite diagnostic tool for Google Antigravity workspaces on Linux, decoding binary protobuf wire data and safely pruning payload bloat (Python, 0 pip dependencies).
+- [Antigravity-Agent-Mesh](https://github.com/CatoPaus/Antigravity-Agent-Mesh): Turnkey NUMA isolation, Git worktree synchronization, S5 Wake-on-LAN, and TARS/CASE audio telemetry turning dual-socket Dell Precision T7610 workstations into a 4-socket, 64-thread, 192 GB ECC Antigravity 2.0 compute mesh (Shell, Linux).
+- [antigravity.google](https://github.com/CatoPaus/antigravity.google): Portable version checker and automated updater for the Google Antigravity 2.0 suite on Ubuntu and Debian (Shell).
+- [node-banana-genkit](https://github.com/CatoPaus/node-banana-genkit): Node-based visual workflow editor built around Firebase Genkit pipelines (TypeScript).
+- [unifi-google-nest-hub](https://github.com/CatoPaus/unifi-google-nest-hub): Local casting bridge for streaming UniFi cameras onto Google Nest Hub displays.
+
+## Core Focus Areas
+- Zero-runtime-dependency AI engineering (TypeScript stdlib & Python stdlib)
+- Firebase Genkit middleware & Google Gemini Interactions API
+- File-backed agent epistemics (Interpretable Context Methodology / ICM)
+- Native C++ N-API quantization & bare-metal NUMA compute orchestration
