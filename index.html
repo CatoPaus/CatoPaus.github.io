@@ -103,9 +103,10 @@
             "position": 2,
             "name": "genkit-turboquant-embedder",
             "codeRepository": "https://github.com/CatoPaus/genkit-turboquant-embedder",
+            "mainEntityOfPage": "https://catopaus.github.io/turboquant/",
             "programmingLanguage": ["TypeScript", "C++"],
             "author": { "@id": "https://catopaus.github.io/#person" },
-            "description": "Experimental Firebase Genkit middleware plugin performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary, reducing vector memory by 96.8% with Next.js Turbopack compatibility."
+            "description": "Firebase Genkit middleware and native C++ N-API addon performing 1-bit Polar Quantization into packed Uint8Array chunks — reducing wire bandwidth by 99.37% vs. 64-bit float JSON and vector RAM by 96.88% vs. Float32."
           },
           {
             "@type": "SoftwareSourceCode",
@@ -687,6 +688,7 @@
       <div class="topbar-actions">
         <a class="nav-btn" href="https://github.com/CatoPaus">GitHub</a>
         <a class="nav-btn" href="https://x.com/cato_paus">X / @cato_paus</a>
+        <a class="nav-btn" href="/turboquant/">TurboQuant RFC</a>
         <a class="nav-btn" href="/llms.txt">llms.txt</a>
         <button class="nav-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">Theme: Auto</button>
       </div>
@@ -777,16 +779,16 @@
 
         <a class="card emerald" href="https://github.com/CatoPaus/genkit-turboquant-embedder">
           <div>
-            <div class="card-kicker">C++ MEMORY COMPRESSION</div>
+            <div class="card-kicker">C++ BANDWIDTH &amp; RAM COMPRESSION</div>
             <h3>genkit-turboquant-embedder</h3>
-            <p>Shrinks bulky AI search vectors by 96.8% so large knowledge bases fit into a fraction of the RAM.</p>
-            <p class="tech-note">Firebase Genkit middleware running 1-bit Polar Quantization through a native C++ N-API binary with Next.js Turbopack compatibility.</p>
+            <p>Sends a 96-byte packed binary chunk instead of ~15 KB of 64-bit float JSON—cutting wire bandwidth by 99.37%, vector RAM by 96.88%, and serialization power.</p>
+            <p class="tech-note">Firebase Genkit middleware &amp; C++ N-API binary with 64-bit POPCNT Hamming search &amp; Next.js Turbopack compatibility. Spec at catopaus.github.io/turboquant/.</p>
           </div>
           <div class="card-footer">
             <div class="pills">
               <span class="pill">TypeScript</span>
               <span class="pill">C++ N-API</span>
-              <span class="pill">-96.8% vector RAM</span>
+              <span class="pill">-99.37% wire · -96.88% RAM</span>
             </div>
             <span class="arrow" aria-hidden="true">↗</span>
           </div>

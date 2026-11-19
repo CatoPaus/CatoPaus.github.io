@@ -9,9 +9,9 @@
 - GitHub: https://github.com/CatoPaus
 - X (Twitter): https://x.com/cato_paus
 
-## Flagship Repositories
+## Flagship Repositories & Research Notes
 - [open-knowledge-studio](https://github.com/CatoPaus/open-knowledge-studio): Turns sprawling AI research into organized, fact-checked knowledge graphs (OKF v0.2) and offline interactive workspaces (A2UI v1.0) built with Interpretable Context Methodology (ICM) on the Google AI Interactions API and Gemini 4 Argon (TypeScript, 0 runtime npm dependencies).
-- [genkit-turboquant-embedder](https://github.com/CatoPaus/genkit-turboquant-embedder): Experimental Firebase Genkit middleware performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary, reducing vector RAM by 96.8% with Next.js Turbopack compatibility (TypeScript, C++ N-API).
+- [genkit-turboquant-embedder](https://github.com/CatoPaus/genkit-turboquant-embedder) ([Wire Spec & Benchmarks](https://catopaus.github.io/turboquant/)): Firebase Genkit middleware and native C++ N-API binary performing 1-bit Polar Quantization into packed `Uint8Array` chunks — cutting wire bandwidth by 99.37% vs. 64-bit float JSON (~15 KB down to 96 bytes for 768 dims), reducing vector RAM by 96.88% vs. Float32, and scoring similarity in ~114 ns via 64-bit hardware POPCNT Hamming distance.
 - [Antigravity-Agent-Mesh](https://github.com/CatoPaus/Antigravity-Agent-Mesh): Turns two used Dell Precision T7610 workstations into a 4-socket, 64-thread, 192 GB ECC home compute mesh for Google Antigravity 2.0 with NUMA-pinned ACP subagents, live Git worktree sync, S5 Wake-on-LAN, and Interstellar-inspired TARS/CASE voices (Shell, Linux).
 
 ## Ecosystem & Home-Lab Utilities

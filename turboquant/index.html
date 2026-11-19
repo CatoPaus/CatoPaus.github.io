@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TurboQuant: 1-Bit Polar Quantization &amp; Binary Chunk Transport — Cato Paus Skrede</title>
+  <meta name="description" content="Replacing 64-bit float JSON embedding arrays with packed 1-bit Uint8Array binary chunks in C++ N-API for Firebase Genkit — 99.37% less wire bandwidth, 96.88% less vector RAM, and ~120 ns hardware Hamming similarity." />
+  <meta name="author" content="Cato Paus Skrede" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://catopaus.github.io/turboquant/" />
+  <link rel="alternate" type="text/plain" title="LLMs Context" href="https://catopaus.github.io/llms.txt" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Cato Paus Skrede" />
+  <meta property="og:title" content="TurboQuant: 1-Bit Polar Quantization &amp; Packed Binary Chunk Transport" />
+  <meta property="og:description" content="Why send 15 KB of 64-bit float JSON per vector when a 96-byte packed binary chunk cuts wire bandwidth by 99.37% and enables ~120 ns hardware Hamming search?" />
+  <meta property="og:url" content="https://catopaus.github.io/turboquant/" />
+  <meta property="og:image" content="https://catopaus.github.io/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@cato_paus" />
+  <meta name="twitter:creator" content="@cato_paus" />
+  <meta name="twitter:title" content="TurboQuant: 1-Bit Polar Quantization &amp; Packed Binary Chunk Transport" />
+  <meta name="twitter:description" content="Cutting embedding wire bandwidth by 99.37% and RAM by 96.88% with packed Uint8Array chunks and C++ N-API hardware popcount." />
+  <meta name="twitter:image" content="https://catopaus.github.io/assets/og-card.png" />
+
+  <!-- Structured Data for Search & Research Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://catopaus.github.io/turboquant/#article",
+        "headline": "TurboQuant: 1-Bit Polar Quantization & Packed Binary Chunk Transport for Embeddings",
+        "description": "Replacing 64-bit float JSON embedding arrays with bit-packed 1-bit Uint8Array binary chunks in native C++ N-API to reduce network bandwidth by 99.37%, memory footprint by 96.88%, and serialization energy.",
+        "url": "https://catopaus.github.io/turboquant/",
+        "datePublished": "2026-11-19",
+        "dateModified": "2026-11-19",
+        "author": {
+          "@type": "Person",
+          "@id": "https://catopaus.github.io/#person",
+          "name": "Cato Paus Skrede",
+          "url": "https://catopaus.github.io/"
+        },
+        "isPartOf": {
+          "@id": "https://catopaus.github.io/#website"
+        },
+        "about": {
+          "@id": "https://catopaus.github.io/turboquant/#software"
+        },
+        "keywords": [
+          "1-bit Polar Quantization",
+          "Binary Quantization",
+          "Packed Binary Chunk Transport",
+          "Embedding Bandwidth Compression",
+          "Vector Compression",
+          "Hamming Distance",
+          "Firebase Genkit",
+          "C++ N-API",
+          "Green AI",
+          "Energy Efficiency"
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "@id": "https://catopaus.github.io/turboquant/#software",
+        "name": "genkit-turboquant-embedder",
+        "codeRepository": "https://github.com/CatoPaus/genkit-turboquant-embedder",
+        "programmingLanguage": ["TypeScript", "C++"],
+        "runtimePlatform": "Node.js N-API",
+        "license": "https://opensource.org/licenses/ISC",
+        "author": {
+          "@id": "https://catopaus.github.io/#person"
+        },
+        "description": "Firebase Genkit middleware and native C++ N-API addon implementing 1-bit Polar Quantization into packed Uint8Array chunks and 64-bit hardware popcount Hamming retrieval."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-page: #070b12;
+      --bg-surface: #0b111e;
+      --bg-surface-2: #0f172a;
+      --bg-pill: #0f172a;
+      --border: #1e293b;
+      --grid: rgba(30, 41, 59, 0.55);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #34d399;
+      --accent-amber: #f59e0b;
+      --glow-emerald: rgba(52, 211, 153, 0.13);
+      --glow-cyan: rgba(56, 189, 248, 0.12);
+      --mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme="dark"]) {
+        --bg-page: #f8fafc;
+        --bg-surface: #ffffff;
+        --bg-surface-2: #f1f5f9;
+        --bg-pill: #ffffff;
+        --border: #cbd5e1;
+        --grid: rgba(203, 213, 225, 0.55);
+        --text-primary: #0f172a;
+        --text-secondary: #334155;
+        --text-muted: #475569;
+        --text-dim: #64748b;
+        --accent-cyan: #0284c7;
+        --accent-emerald: #059669;
+        --accent-amber: #b45309;
+        --glow-emerald: rgba(5, 150, 105, 0.08);
+        --glow-cyan: rgba(2, 132, 199, 0.09);
+      }
+    }
+
+    :root[data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f1f5f9;
+      --bg-pill: #ffffff;
+      --border: #cbd5e1;
+      --grid: rgba(203, 213, 225, 0.55);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --accent-cyan: #0284c7;
+      --accent-emerald: #059669;
+      --accent-amber: #b45309;
+      --glow-emerald: rgba(5, 150, 105, 0.08);
+      --glow-cyan: rgba(2, 132, 199, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg-page);
+      background-image:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--text-primary);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 960px; margin: 0 auto; padding: 28px 20px 64px; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 10px; }
+    .topbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .status-dot {
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent-emerald);
+      box-shadow: 0 0 0 4px var(--glow-emerald);
+    }
+    .nav-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 7px; border: 1px solid var(--border);
+      background: var(--bg-surface); color: var(--text-secondary);
+      font-family: var(--mono); font-size: 11.5px; cursor: pointer;
+    }
+    .nav-btn:hover { border-color: var(--accent-emerald); color: var(--text-primary); }
+
+    .hero {
+      padding: 32px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background:
+        radial-gradient(circle at 14% 20%, var(--glow-emerald), transparent 52%),
+        radial-gradient(circle at 86% 80%, var(--glow-cyan), transparent 48%),
+        linear-gradient(135deg, var(--bg-surface), var(--bg-surface-2));
+    }
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.1px;
+      color: var(--accent-emerald);
+      margin-bottom: 10px;
+    }
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.75rem, 3.8vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+    .hero p {
+      margin: 0 0 20px;
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+      max-width: 74ch;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    @media (max-width: 760px) {
+      .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding: 24px 20px; }
+    }
+    .stat {
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-pill);
+    }
+    .stat-val {
+      font-family: var(--mono);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .section-title {
+      display: flex; align-items: center; gap: 10px;
+      margin: 38px 0 14px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.15rem; font-weight: 700;
+    }
+    .section-num { font-family: var(--mono); font-size: 0.9rem; color: var(--accent-emerald); }
+
+    .panel {
+      padding: 22px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      margin-bottom: 16px;
+    }
+    .panel p { margin: 0; color: var(--text-secondary); font-size: 0.96rem; }
+    .panel p + p { margin-top: 12px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    @media (max-width: 820px) { .grid-3 { grid-template-columns: 1fr; } }
+
+    .card {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.7px;
+      color: var(--accent-cyan);
+    }
+    .card p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); }
+
+    .table-wrap {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 11px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    td { white-space: nowrap; }
+    tr:last-child td { border-bottom: none; }
+    th {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; line-height: 1.35;
+      color: var(--text-muted); background: var(--bg-surface-2);
+    }
+    td strong { color: var(--accent-emerald); }
+
+    pre {
+      margin: 0;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface-2);
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+    code { font-family: var(--mono); font-size: 0.9em; color: var(--accent-cyan); }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 8px;
+      border: 1px solid var(--accent-emerald);
+      background: var(--glow-emerald);
+      color: var(--text-primary);
+      font-family: var(--mono); font-size: 12px; font-weight: 700;
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    footer {
+      margin-top: 42px; padding-top: 18px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      font-family: var(--mono); font-size: 11.5px; color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent-emerald); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="topbar" aria-label="Primary">
+      <div class="topbar-left">
+        <span class="status-dot" aria-hidden="true"></span>
+        <a href="/">← CATOPAUS.GITHUB.IO</a>
+        <span>/ TURBOQUANT RFC</span>
+      </div>
+      <div class="topbar-actions">
+        <a class="nav-btn" href="https://github.com/CatoPaus/genkit-turboquant-embedder">GitHub Repo</a>
+        <a class="nav-btn" href="/">Main Lab</a>
+        <button class="nav-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">Theme: Auto</button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="kicker">RESEARCH &amp; WIRE SPEC // 1-BIT POLAR QUANTIZATION</div>
+      <h1>Sending Compressed Binary Chunks Instead of 64-Bit Float JSON</h1>
+      <p>
+        Standard embedding APIs transmit vectors as bulky JSON arrays of 64-bit numbers (<code>number[]</code>) — roughly <strong>15 KB per 768-dimensional vector</strong>. By quantizing sign bits in native C++ N-API and transporting only a bit-packed <code>Uint8Array</code> chunk (<strong>96 bytes</strong>), we cut wire bandwidth by <strong>99.37%</strong>, cut vector RAM by <strong>96.88%</strong> vs. Float32, and reduce serialization energy across network and edge links.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://github.com/CatoPaus/genkit-turboquant-embedder">Inspect Code &amp; C++ Addon on GitHub ↗</a>
+        <a class="nav-btn" href="#benchmarks">View Measured Benchmarks ↓</a>
+        <a class="nav-btn" href="#cite">Cite This Spec ↓</a>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-val">99.37%</div>
+          <div class="stat-label">Wire bandwidth saved vs. Float64 JSON</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">96 B</div>
+          <div class="stat-label">Packed chunk size (768 dims)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">0.82 µs</div>
+          <div class="stat-label">C++ N-API pack latency (768d)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">114 ns</div>
+          <div class="stat-label">64-bit POPCNT Hamming distance</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title"><span class="section-num">01 //</span> The Core Problem: JSON Float Bloat on the Wire</h2>
+      <div class="panel">
+        <p>
+          In Node.js and JavaScript AI frameworks (including Firebase Genkit's current <code>EmbedResponse</code> schema), embeddings are modeled as <code>number[]</code>. Even when a model produces 32-bit floats, serializing <code>number[]</code> over REST or RPC turns every coordinate into a variable-length ASCII decimal string like <code>-0.0482917384129</code>.
+        </p>
+        <p>
+          That wastes energy and bandwidth in three places at once: <strong>JSON formatting on the sender</strong>, <strong>15–60 KB of network payload per vector</strong>, and <strong>JSON parsing + V8 garbage collection on the receiver</strong>. When the downstream consumer only needs semantic similarity, shipping 64 bits of decimal precision per dimension over the wire is unnecessary overhead.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>BANDWIDTH REDUCTION</h3>
+          <p>A 768-d vector drops from <strong>15,278 B</strong> of Float64 JSON down to a <strong>96 B</strong> packed <code>Uint8Array</code> chunk (~159× smaller over the wire).</p>
+        </div>
+        <div class="card">
+          <h3>POWER &amp; CPU SAVINGS</h3>
+          <p>Zero decimal formatting or JSON parsing at retrieval edges; 8 dimensions pack into 1 byte in ~0.82 µs inside native C++.</p>
+        </div>
+        <div class="card">
+          <h3>RETRIEVAL WITHOUT FLOATS</h3>
+          <p>Comparison runs directly on packed bytes via 64-bit <code>XOR + POPCNT</code> Hamming distance in ~114–124 ns.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title" id="benchmarks"><span class="section-num">02 //</span> Measured Benchmarks (Node.js v24 + MSVC x64 N-API)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimensions</th>
+              <th>Float64 JSON</th>
+              <th>Unpacked Bit JSON</th>
+              <th>Float32 Binary</th>
+              <th>Packed 1-Bit Chunk</th>
+              <th>Bandwidth Saved vs. JSON</th>
+              <th>Pack Time</th>
+              <th>Hamming Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>768</td>
+              <td>15,278 B</td>
+              <td>1,537 B</td>
+              <td>3,072 B</td>
+              <td><strong>96 B</strong></td>
+              <td><strong>99.37%</strong></td>
+              <td>0.82 µs</td>
+              <td>114.3 ns</td>
+            </tr>
+            <tr>
+              <td>1,536</td>
+              <td>30,467 B</td>
+              <td>3,073 B</td>
+              <td>6,144 B</td>
+              <td><strong>192 B</strong></td>
+              <td><strong>99.37%</strong></td>
+              <td>1.09 µs</td>
+              <td>120.9 ns</td>
+            </tr>
+            <tr>
+              <td>3,072</td>
+              <td>60,932 B</td>
+              <td>6,145 B</td>
+              <td>12,288 B</td>
+              <td><strong>384 B</strong></td>
+              <td><strong>99.37%</strong></td>
+              <td>1.80 µs</td>
+              <td>124.0 ns</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title"><span class="section-num">03 //</span> Wire Format &amp; Genkit RFC</h2>
+      <div class="panel">
+        <p>
+          <strong>Bit layout:</strong> Given embedding vector <em>v</em> of length <em>D</em>, coordinate <em>i</em> maps to sign bit <code>b_i = (v[i] &gt; 0) ? 1 : 0</code> and packs LSB-first into byte <code>i &gt;&gt; 3</code> at bit offset <code>i &amp; 7</code>, yielding a dense buffer of <code>ceil(D / 8)</code> bytes.
+        </p>
+        <p>
+          <strong>Similarity estimator:</strong> Normalized similarity in <code>[-1, 1]</code> is computed directly from packed chunks via <code>1 - 2 * hammingDistance(A, B) / D</code> using 64-bit hardware popcount strides (<code>__popcnt64</code> / <code>__builtin_popcountll</code>).
+        </p>
+        <p>
+          <strong>Open RFC for AI SDKs:</strong> Supporting an optional native binary field (such as <code>packedChunk?: Uint8Array</code> alongside or instead of <code>embedding: number[]</code>) lets middleware, edge workers, and vector stores transmit and compare compressed chunks directly without reverting to 64-bit float JSON.
+        </p>
+      </div>
+
+      <h2 class="section-title" id="cite"><span class="section-num">04 //</span> Reference &amp; Citation</h2>
+      <pre>@software{skrede2026turboquant,
+  author       = {Skrede, Cato Paus},
+  title        = {Genkit TurboQuant Native Embedder: 1-Bit Polar Quantization and Packed Binary Chunk Transport},
+  year         = {2026},
+  url          = {https://github.com/CatoPaus/genkit-turboquant-embedder},
+  note         = {Specification: https://catopaus.github.io/turboquant/}
+}</pre>
+    </main>
+
+    <footer>
+      <span>EOF // Cato Paus Skrede · TurboQuant Binary Chunk Spec</span>
+      <span>
+        <a href="/">Home</a> ·
+        <a href="https://github.com/CatoPaus/genkit-turboquant-embedder">Repository</a> ·
+        <a href="/llms.txt">llms.txt</a>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      const order = ['auto', 'dark', 'light'];
+      let idx = 0;
+
+      function apply(mode) {
+        if (mode === 'auto') {
+          root.removeAttribute('data-theme');
+          btn.textContent = 'Theme: Auto';
+        } else {
+          root.setAttribute('data-theme', mode);
+          btn.textContent = 'Theme: ' + mode.charAt(0).toUpperCase() + mode.slice(1);
+        }
+      }
+
+      const saved = localStorage.getItem('theme');
+      if (saved && order.includes(saved)) {
+        idx = order.indexOf(saved);
+        apply(saved);
+      }
+
+      btn.addEventListener('click', function () {
+        idx = (idx + 1) % order.length;
+        const mode = order[idx];
+        localStorage.setItem('theme', mode);
+        apply(mode);
+      });
+    })();
+  </script>
+</body>
+</html>
