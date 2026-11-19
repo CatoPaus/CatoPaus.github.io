@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Cato Paus Skrede — Independent AI &amp; Systems Lab">
+  <defs>
+    <linearGradient id="bgOg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060A11" />
+      <stop offset="55%" stop-color="#0B1220" />
+      <stop offset="100%" stop-color="#070E18" />
+    </linearGradient>
+    <linearGradient id="lineOg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0" />
+      <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="75%" stop-color="#34D399" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="glowCyanOg" cx="18%" cy="28%" r="52%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowEmeraldOg" cx="85%" cy="76%" r="48%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.13" />
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridOg" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1E293B" stroke-width="0.8" stroke-opacity="0.55" />
+    </pattern>
+    <style>
+      .mono { font-family: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgOg)" />
+  <rect width="1200" height="630" fill="url(#gridOg)" />
+  <rect width="1200" height="630" fill="url(#glowCyanOg)" />
+  <rect width="1200" height="630" fill="url(#glowEmeraldOg)" />
+
+  <!-- Chassis Frame -->
+  <rect x="28" y="28" width="1144" height="574" rx="18" fill="none" stroke="#1E293B" stroke-width="1.5" />
+  <g stroke="#38BDF8" stroke-width="2" fill="none" opacity="0.75">
+    <path d="M 28 60 L 28 28 L 60 28" />
+    <path d="M 1140 28 L 1172 28 L 1172 60" />
+    <path d="M 28 570 L 28 602 L 60 602" />
+    <path d="M 1140 602 L 1172 602 L 1172 570" />
+  </g>
+
+  <!-- Top Telemetry Row -->
+  <g transform="translate(68, 76)">
+    <circle cx="8" cy="8" r="5" fill="#34D399" />
+    <circle cx="8" cy="8" r="11" fill="#34D399" opacity="0.16" />
+    <text x="28" y="13" class="mono" font-size="14" fill="#94A3B8" letter-spacing="1.6">NODE // CATOPAUS.GITHUB.IO</text>
+
+    <g transform="translate(710, -10)">
+      <rect x="0" y="0" width="354" height="34" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
+      <text x="177" y="21.5" text-anchor="middle" class="mono" font-size="13.5" font-weight="600" fill="#38BDF8" letter-spacing="1">INDEPENDENT AI &amp; HARDWARE LAB</text>
+    </g>
+  </g>
+
+  <!-- Main Focal Block -->
+  <g transform="translate(68, 224)">
+    <text x="0" y="0" class="sans" font-size="66" font-weight="800" fill="#F8FAFC" letter-spacing="-1.5">Cato Paus Skrede</text>
+    <text x="580" y="-4" class="mono" font-size="23" font-weight="600" fill="#38BDF8" letter-spacing="0.5">@CatoPaus</text>
+    <rect x="724" y="-24" width="11" height="25" rx="1.5" fill="#38BDF8" />
+
+    <text x="0" y="54" class="sans" font-size="25" font-weight="500" fill="#CBD5E1">
+      Independent programmer exploring AI tools, native C++ &amp; bare-metal home servers.
+    </text>
+    <text x="0" y="96" class="mono" font-size="17" fill="#64748B">
+      &gt; Firebase Genkit · Gemini · TypeScript · Python · C++ N-API · 4-Socket Xeon Mesh
+    </text>
+  </g>
+
+  <rect x="68" y="376" width="1064" height="2" fill="url(#lineOg)" />
+
+  <!-- Bottom 3 Flagship Project Cards -->
+  <g transform="translate(68, 420)">
+    <g>
+      <rect x="0" y="0" width="336" height="122" rx="12" fill="#0B111E" stroke="#1E293B" stroke-width="1.4" />
+      <rect x="18" y="0" width="76" height="3" fill="#38BDF8" />
+      <text x="20" y="32" class="mono" font-size="11.5" font-weight="600" fill="#38BDF8" letter-spacing="1">AI RESEARCH STUDIO</text>
+      <text x="20" y="64" class="sans" font-size="20" font-weight="700" fill="#F8FAFC">open-knowledge-studio</text>
+      <text x="20" y="94" class="sans" font-size="14" fill="#94A3B8">Grounded knowledge graphs, 0 npm deps</text>
+    </g>
+
+    <g transform="translate(364, 0)">
+      <rect x="0" y="0" width="336" height="122" rx="12" fill="#0B111E" stroke="#1E293B" stroke-width="1.4" />
+      <rect x="18" y="0" width="76" height="3" fill="#34D399" />
+      <text x="20" y="32" class="mono" font-size="11.5" font-weight="600" fill="#34D399" letter-spacing="1">C++ MEMORY COMPRESSION</text>
+      <text x="20" y="64" class="sans" font-size="20" font-weight="700" fill="#F8FAFC">genkit-turboquant-embedder</text>
+      <text x="20" y="94" class="sans" font-size="14" fill="#94A3B8">1-bit quantization, -96.8% vector RAM</text>
+    </g>
+
+    <g transform="translate(728, 0)">
+      <rect x="0" y="0" width="336" height="122" rx="12" fill="#0B111E" stroke="#1E293B" stroke-width="1.4" />
+      <rect x="18" y="0" width="76" height="3" fill="#F59E0B" />
+      <text x="20" y="32" class="mono" font-size="11.5" font-weight="600" fill="#F59E0B" letter-spacing="1">HOME COMPUTE CLUSTER</text>
+      <text x="20" y="64" class="sans" font-size="20" font-weight="700" fill="#F8FAFC">Antigravity-Agent-Mesh</text>
+      <text x="20" y="94" class="sans" font-size="14" fill="#94A3B8">64 threads · 192 GB ECC · TARS/CASE</text>
+    </g>
+  </g>
+</svg>

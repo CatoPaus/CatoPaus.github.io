@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cato Paus Skrede (@CatoPaus) — AI Tooling, Firebase Genkit &amp; Bare-Metal Compute</title>
-  <meta name="description" content="Cato Paus Skrede (@CatoPaus) — Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
+  <title>Cato Paus Skrede (@CatoPaus) — Independent AI &amp; Systems Lab</title>
+  <meta name="description" content="Cato Paus Skrede (@CatoPaus) — Independent programmer exploring AI tools, native C++ performance, and bare-metal home compute servers. Open-source projects in TypeScript, Python, C++ N-API, Firebase Genkit &amp; Google Gemini." />
   <meta name="author" content="Cato Paus Skrede" />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="loqv8UNj_Cx06EGhxkj7gAbBz-uHTgYg0-kB8dQ0gds" />
@@ -13,12 +13,13 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="profile" />
-  <meta property="og:title" content="Cato Paus Skrede (@CatoPaus) — AI Tooling &amp; Bare-Metal Compute" />
-  <meta property="og:description" content="Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
+  <meta property="og:site_name" content="Cato Paus Skrede" />
+  <meta property="og:title" content="Cato Paus Skrede (@CatoPaus) — Independent AI &amp; Systems Lab" />
+  <meta property="og:description" content="Independent programmer exploring AI tools, native C++ compression, and home-lab Xeon compute clusters—built cleanly with zero bloat." />
   <meta property="og:url" content="https://catopaus.github.io/" />
-  <meta property="og:image" content="https://catopaus.github.io/assets/x-header-banner.png" />
-  <meta property="og:image:width" content="1500" />
-  <meta property="og:image:height" content="500" />
+  <meta property="og:image" content="https://catopaus.github.io/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="profile:username" content="CatoPaus" />
   <meta property="profile:first_name" content="Cato" />
   <meta property="profile:last_name" content="Skrede" />
@@ -27,8 +28,8 @@
   <meta name="twitter:site" content="@cato_paus" />
   <meta name="twitter:creator" content="@cato_paus" />
   <meta name="twitter:title" content="Cato Paus Skrede (@CatoPaus)" />
-  <meta name="twitter:description" content="Building zero-dependency AI tooling for Firebase Genkit, Gemini &amp; Google Antigravity. TypeScript, Python, C++ N-API &amp; bare-metal NUMA." />
-  <meta name="twitter:image" content="https://catopaus.github.io/assets/x-header-banner.png" />
+  <meta name="twitter:description" content="Independent programmer exploring AI tools, native C++ compression, and bare-metal home servers—built cleanly with zero bloat." />
+  <meta name="twitter:image" content="https://catopaus.github.io/assets/og-card.png" />
 
   <!-- Structured Data for Google & AI Search Grounding -->
   <script type="application/ld+json">
@@ -36,10 +37,23 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://catopaus.github.io/#website",
+        "url": "https://catopaus.github.io/",
+        "name": "Cato Paus Skrede",
+        "description": "Independent AI & Systems Lab by Cato Paus Skrede (@CatoPaus)",
+        "publisher": {
+          "@id": "https://catopaus.github.io/#person"
+        }
+      },
+      {
         "@type": "ProfilePage",
         "@id": "https://catopaus.github.io/#profilepage",
         "url": "https://catopaus.github.io/",
         "name": "Cato Paus Skrede (@CatoPaus)",
+        "isPartOf": {
+          "@id": "https://catopaus.github.io/#website"
+        },
         "mainEntity": {
           "@id": "https://catopaus.github.io/#person"
         }
@@ -51,23 +65,24 @@
         "alternateName": ["Cato Paus", "CPS", "@CatoPaus", "@cato_paus"],
         "url": "https://catopaus.github.io/",
         "mainEntityOfPage": "https://catopaus.github.io/",
-        "jobTitle": "AI Tooling Architect",
-        "description": "Building zero-dependency AI tooling for Firebase Genkit, Gemini & Google Antigravity. TypeScript, Python, C++ N-API & bare-metal NUMA.",
+        "jobTitle": "Independent Programmer & AI Systems Builder",
+        "description": "Independent programmer and systems builder exploring Firebase Genkit, Google Gemini, native C++ memory compression, and bare-metal Linux compute clusters.",
         "sameAs": [
           "https://github.com/CatoPaus",
           "https://x.com/cato_paus"
         ],
         "knowsAbout": [
+          "Artificial Intelligence Tooling",
           "Firebase Genkit",
           "Google Gemini API",
           "Google Antigravity",
           "Interpretable Context Methodology (ICM)",
+          "Open Knowledge Format (OKF)",
           "1-bit Polar Quantization",
           "TypeScript",
           "Python",
           "C++ N-API",
-          "NUMA Compute Clusters",
-          "SQLite & Protobuf Diagnostics"
+          "Linux Systems & NUMA Compute Clusters"
         ]
       },
       {
@@ -90,34 +105,34 @@
             "codeRepository": "https://github.com/CatoPaus/genkit-turboquant-embedder",
             "programmingLanguage": ["TypeScript", "C++"],
             "author": { "@id": "https://catopaus.github.io/#person" },
-            "description": "Experimental Firebase Genkit middleware plugin performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary with Next.js Turbopack compatibility."
+            "description": "Experimental Firebase Genkit middleware plugin performing 1-bit Polar Quantization of Float32 embeddings via a native C++ N-API binary, reducing vector memory by 96.8% with Next.js Turbopack compatibility."
           },
           {
             "@type": "SoftwareSourceCode",
             "position": 3,
-            "name": "antigravity-db-inspector",
-            "codeRepository": "https://github.com/CatoPaus/antigravity-db-inspector",
-            "programmingLanguage": "Python",
-            "author": { "@id": "https://catopaus.github.io/#person" },
-            "description": "Zero-dependency local web dashboard and SQLite diagnostic tool for Google Antigravity workspaces that decodes binary protobuf wire data and safely prunes oversized payload bloat."
-          },
-          {
-            "@type": "SoftwareSourceCode",
-            "position": 4,
             "name": "Antigravity-Agent-Mesh",
             "codeRepository": "https://github.com/CatoPaus/Antigravity-Agent-Mesh",
             "programmingLanguage": "Shell",
             "author": { "@id": "https://catopaus.github.io/#person" },
-            "description": "Turnkey orchestration, NUMA isolation, Git worktree synchronization, S5 Wake-on-LAN, and TARS/CASE audio telemetry for turning dual-socket Linux workstations into a 4-socket, 64-thread, 192 GB ECC bare-metal Antigravity compute mesh."
+            "description": "Turnkey orchestration, NUMA isolation, Git worktree synchronization, S5 Wake-on-LAN, and TARS/CASE audio telemetry turning dual Dell Precision T7610 workstations into a 4-socket, 64-thread, 192 GB ECC bare-metal Antigravity compute mesh."
           },
           {
             "@type": "SoftwareSourceCode",
-            "position": 5,
+            "position": 4,
             "name": "antigravity.google",
             "codeRepository": "https://github.com/CatoPaus/antigravity.google",
             "programmingLanguage": "Shell",
             "author": { "@id": "https://catopaus.github.io/#person" },
             "description": "Portable automated version checker and updater for the Google Antigravity 2.0 suite on Ubuntu and Debian systems."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "position": 5,
+            "name": "unifi-google-nest-hub",
+            "codeRepository": "https://github.com/CatoPaus/unifi-google-nest-hub",
+            "programmingLanguage": "Batchfile",
+            "author": { "@id": "https://catopaus.github.io/#person" },
+            "description": "Self-hosted WebRTC bridge for streaming UniFi Protect security cameras onto Google Nest Hub displays with sub-second latency."
           }
         ]
       }
@@ -373,7 +388,7 @@
 
     .hero-lead {
       margin: 14px 0 8px;
-      font-size: 1.05rem;
+      font-size: 1.04rem;
       color: var(--text-secondary);
       max-width: 72ch;
     }
@@ -438,7 +453,25 @@
       color: var(--accent-cyan);
     }
 
-    /* Bento Grid */
+    /* Plain-English Intro Box */
+    .story-box {
+      padding: 22px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      margin-bottom: 16px;
+    }
+
+    .story-box p {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .story-box p + p { margin-top: 10px; }
+
+    /* Grids */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -451,7 +484,7 @@
       gap: 16px;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 820px) {
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
       .hero { padding: 26px 20px 22px; }
     }
@@ -461,7 +494,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 22px 22px 18px;
+      padding: 22px 20px 18px;
       border-radius: 12px;
       border: 1.5px solid var(--border);
       background: var(--bg-surface);
@@ -472,8 +505,8 @@
       content: "";
       position: absolute;
       top: 0;
-      left: 22px;
-      width: 84px;
+      left: 20px;
+      width: 76px;
       height: 2.5px;
       border-radius: 0 0 2px 2px;
       background: var(--card-accent, var(--accent-cyan));
@@ -493,31 +526,39 @@
       font-family: var(--mono);
       font-size: 10.5px;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.9px;
       color: var(--card-accent, var(--accent-cyan));
       margin-bottom: 8px;
     }
 
     .card h3 {
       margin: 0 0 8px;
-      font-size: 1.15rem;
+      font-size: 1.03rem;
       font-weight: 700;
+      letter-spacing: -0.01em;
       color: var(--text-primary);
     }
 
     .card p {
-      margin: 0 0 18px;
+      margin: 0 0 12px;
       font-size: 0.89rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .card .tech-note {
+      margin: 0 0 16px;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.48;
     }
 
     .card-footer {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 10px;
+      flex-wrap: nowrap;
     }
 
     .pills {
@@ -527,12 +568,12 @@
     }
 
     .pill {
-      padding: 3px 9px;
+      padding: 3px 8px;
       border-radius: 5px;
       border: 1px solid var(--border);
       background: var(--bg-pill);
       font-family: var(--mono);
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--text-secondary);
     }
@@ -561,6 +602,13 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.8px;
+    }
+
+    .stack-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.55;
     }
 
     .stack-card ul {
@@ -651,7 +699,7 @@
       <span class="corner br" aria-hidden="true"></span>
 
       <div class="hero-meta">
-        <span class="hero-tag">IDENTITY // AI TOOLING ARCHITECT</span>
+        <span class="hero-tag">INDEPENDENT LAB // PROGRAMMING &amp; AI</span>
         <span class="tars-pill">TARS_SETTINGS :: ZERO-BLOAT 100%</span>
       </div>
 
@@ -661,7 +709,7 @@
       </h1>
 
       <p class="hero-lead">
-        Building zero-dependency AI tooling for <strong>Firebase Genkit</strong>, <strong>Google Gemini</strong> &amp; <strong>Google Antigravity</strong>. TypeScript, Python, C++ N-API &amp; bare-metal NUMA compute.
+        Independent programmer &amp; systems builder exploring new AI tools, native C++ performance, and bare-metal home servers—building open-source software just to see how far code and silicon can go.
       </p>
       <p class="hero-quote">
         &gt; "I have a cue light I can use to show you when I'm joking, if you like." — TARS
@@ -676,13 +724,46 @@
     </header>
 
     <main>
-      <h2 class="section-title"><span class="section-num">01 //</span> Featured Genkit &amp; AI Tooling</h2>
-      <section class="grid-2" aria-label="Featured Projects">
+      <h2 class="section-title"><span class="section-num">00 //</span> In Plain English — Why I Build</h2>
+      <section aria-label="In Plain English">
+        <div class="story-box">
+          <p>
+            If you landed here wondering what I actually spend my time doing: I treat programming like a workshop. Instead of just using off-the-shelf apps, I like pulling new AI technologies apart, wiring them directly to real hardware at home, and building clean, fast tools with zero unnecessary bloat.
+          </p>
+          <p>
+            Everything below is open-source exploration—from making AI assistants keep track of real sources on disk, to writing low-level C++ math that shrinks memory usage by 96.8%, to linking old server workstations into a home compute cluster that speaks with <em>Interstellar</em> voices when a job finishes.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="stack-card">
+            <div class="stack-header" style="color: var(--accent-cyan);">
+              <span class="dot cyan"></span>SMARTER AI RESEARCH
+            </div>
+            <p>Turning messy AI chat threads into organized, source-checked knowledge maps stored right on your own computer.</p>
+          </div>
+          <div class="stack-card">
+            <div class="stack-header" style="color: var(--accent-emerald);">
+              <span class="dot emerald"></span>TINY MEMORY FOOTPRINT
+            </div>
+            <p>Writing custom C++ math that compresses giant AI search tables so much more fits into ordinary hardware.</p>
+          </div>
+          <div class="stack-card">
+            <div class="stack-header" style="color: var(--accent-amber);">
+              <span class="dot amber"></span>HOME SUPERCOMPUTER
+            </div>
+            <p>Wiring two used multi-processor Dell workstations into a 64-thread home lab that wakes on demand and talks back.</p>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="section-title"><span class="section-num">01 //</span> Featured Open-Source Projects</h2>
+      <section class="grid-3" aria-label="Featured Projects">
         <a class="card cyan" href="https://github.com/CatoPaus/open-knowledge-studio">
           <div>
-            <div class="card-kicker">FEATURED // GENKIT &amp; GEMINI 4</div>
+            <div class="card-kicker">AI RESEARCH STUDIO</div>
             <h3>open-knowledge-studio</h3>
-            <p>Zero-dependency grounded research, compounding knowledge graph (OKF v0.2), and A2UI v1.0 interactive surface engine built with Interpretable Context Methodology (ICM) on Google AI Interactions API + Gemini 4 Argon.</p>
+            <p>Turns sprawling AI research into organized, fact-checked knowledge graphs and offline interactive workspaces saved right on disk.</p>
+            <p class="tech-note">Built with zero runtime npm dependencies using ICM, OKF v0.2, A2UI v1.0, Google AI Interactions API &amp; Gemini 4 Argon.</p>
           </div>
           <div class="card-footer">
             <div class="pills">
@@ -696,9 +777,10 @@
 
         <a class="card emerald" href="https://github.com/CatoPaus/genkit-turboquant-embedder">
           <div>
-            <div class="card-kicker">RFC // NATIVE C++ VECTOR QUANTIZER</div>
+            <div class="card-kicker">C++ MEMORY COMPRESSION</div>
             <h3>genkit-turboquant-embedder</h3>
-            <p>Firebase Genkit middleware intercepting Float32 embeddings through a native C++ N-API hardware binary for 1-bit Polar Quantization (96.8% lateral RAM reduction) with Next.js Turbopack compatibility.</p>
+            <p>Shrinks bulky AI search vectors by 96.8% so large knowledge bases fit into a fraction of the RAM.</p>
+            <p class="tech-note">Firebase Genkit middleware running 1-bit Polar Quantization through a native C++ N-API binary with Next.js Turbopack compatibility.</p>
           </div>
           <div class="card-footer">
             <div class="pills">
@@ -710,27 +792,12 @@
           </div>
         </a>
 
-        <a class="card violet" href="https://github.com/CatoPaus/antigravity-db-inspector">
-          <div>
-            <div class="card-kicker">DIAGNOSTICS // SQLITE + PROTOBUF</div>
-            <h3>antigravity-db-inspector</h3>
-            <p>Zero-dependency local web dashboard for Google Antigravity SQLite databases on Linux — pinpoints oversized payloads, decodes binary protobuf wire data, and prunes bloat safely in one click.</p>
-          </div>
-          <div class="card-footer">
-            <div class="pills">
-              <span class="pill">Python</span>
-              <span class="pill">0 pip deps</span>
-              <span class="pill">1-Click Prune</span>
-            </div>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-        </a>
-
         <a class="card amber" href="https://github.com/CatoPaus/Antigravity-Agent-Mesh">
           <div>
-            <div class="card-kicker">BARE-METAL // 4-SOCKET XEON MESH</div>
+            <div class="card-kicker">BARE-METAL HOME CLUSTER</div>
             <h3>Antigravity-Agent-Mesh</h3>
-            <p>Turns dual Dell Precision T7610 workstations into a 4-socket, 64-thread, 192 GB ECC Antigravity 2.0 compute mesh with NUMA-pinned ACP subagents, live Git worktree sync, S5 Wake-on-LAN &amp; TARS/CASE audio.</p>
+            <p>Links two Dell Precision T7610 workstations into a 64-thread, 192 GB ECC home compute cluster that sleeps until needed and speaks via TARS &amp; CASE.</p>
+            <p class="tech-note">NUMA-pinned ACP subagents, shared compiler caches, live Git worktree sync, and S5 Wake-on-LAN.</p>
           </div>
           <div class="card-footer">
             <div class="pills">
@@ -743,7 +810,7 @@
         </a>
       </section>
 
-      <h2 class="section-title"><span class="section-num">02 //</span> Ecosystem &amp; Sidecar Utilities</h2>
+      <h2 class="section-title"><span class="section-num">02 //</span> Ecosystem &amp; Home-Lab Utilities</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -760,9 +827,9 @@
               <td>Portable version checker &amp; automated updater for the Google Antigravity 2.0 suite (Hub, IDE, CLI).</td>
             </tr>
             <tr>
-              <td><a href="https://github.com/CatoPaus/genkit">genkit</a></td>
-              <td>TypeScript</td>
-              <td>Fork &amp; experimentation sandbox for Google's open-source Firebase Genkit AI framework.</td>
+              <td><a href="https://github.com/CatoPaus/unifi-google-nest-hub">unifi-google-nest-hub</a></td>
+              <td>Batch · WebRTC / IoT</td>
+              <td>Streams UniFi Protect security cameras directly onto Google Nest Hub displays with sub-second latency.</td>
             </tr>
             <tr>
               <td><a href="https://github.com/CatoPaus/node-banana-genkit">node-banana-genkit</a></td>
@@ -770,9 +837,9 @@
               <td>Node-based visual workflow editor built around Genkit pipelines.</td>
             </tr>
             <tr>
-              <td><a href="https://github.com/CatoPaus/unifi-google-nest-hub">unifi-google-nest-hub</a></td>
-              <td>Batch · IoT</td>
-              <td>Local casting bridge for streaming UniFi cameras onto Google Nest Hub displays.</td>
+              <td><a href="https://github.com/CatoPaus/genkit">genkit</a></td>
+              <td>TypeScript</td>
+              <td>Fork &amp; experimentation sandbox for Google's open-source Firebase Genkit AI framework.</td>
             </tr>
           </tbody>
         </table>
@@ -799,18 +866,18 @@
           <ul>
             <li>TypeScript &amp; Node.js (0-Dep)</li>
             <li>C++ N-API / node-gyp Bindings</li>
-            <li>Python (Stdlib Diagnostics)</li>
+            <li>Python (Stdlib Tooling)</li>
             <li>Bash / Linux System Tooling</li>
           </ul>
         </div>
 
         <div class="stack-card">
           <div class="stack-header" style="color: var(--accent-amber);">
-            <span class="dot amber"></span>INFRA &amp; DIAGNOSTICS
+            <span class="dot amber"></span>INFRA &amp; HARDWARE
           </div>
           <ul>
             <li>Dual-Socket NUMA &amp; cgroups</li>
-            <li>SQLite &amp; Protobuf Wire Tools</li>
+            <li>systemd &amp; Hardware Telemetry</li>
             <li>Git Worktree Orchestration</li>
             <li>S5 Wake-on-LAN &amp; Local IoT</li>
           </ul>
@@ -819,7 +886,7 @@
     </main>
 
     <footer>
-      <span>EOF // Cato Paus Skrede · Zero-Bloat Hardware-Lab</span>
+      <span>EOF // Cato Paus Skrede · Independent Zero-Bloat Lab</span>
       <span>
         <a href="https://github.com/CatoPaus">GitHub</a> ·
         <a href="https://x.com/cato_paus">X</a> ·

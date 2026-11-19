@@ -92,7 +92,7 @@
     <rect x="708" y="-23" width="11" height="24" rx="1.5" fill="#38BDF8" />
 
     <text x="0" y="48" class="sans" font-size="22" font-weight="500" fill="#CBD5E1">
-      Zero-Dependency AI Tooling · Firebase Genkit · Gemini · Bare-Metal NUMA
+      Independent AI &amp; Systems Lab · Firebase Genkit · Gemini · Bare-Metal NUMA
     </text>
     <text x="0" y="82" class="mono" font-size="15.5" fill="#64748B">
       &gt; TypeScript · Python · C++ N-API · Google Antigravity 2.0 · 4-Socket Xeon Mesh
@@ -117,7 +117,7 @@
     <g transform="translate(520, 0)">
       <rect x="0" y="-18" width="236" height="36" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
       <circle cx="18" cy="0" r="4" fill="#A78BFA" />
-      <text x="34" y="5" class="mono" font-size="13" font-weight="600" fill="#E2E8F0">antigravity-db-inspector</text>
+      <text x="34" y="5" class="mono" font-size="13" font-weight="600" fill="#E2E8F0">Antigravity-Agent-Mesh</text>
     </g>
     <g transform="translate(772, 0)">
       <rect x="0" y="-18" width="200" height="36" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="1.2" />
